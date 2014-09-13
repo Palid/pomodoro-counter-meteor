@@ -1,0 +1,13 @@
+<template name="pomodoroSettings">
+  <div class="container-fluid">
+    <h4 class="text-center col-sm-3">type</h4>
+    <h4 class="text-center col-sm-3">color</h4>
+  </div>
+  Currently there are : {{ pomodoro.length }} timers.
+  Want to add a new one?
+  <input type="text" id="new-pomodoro-date" placeholder="New date">
+  <input type="text" id="new-pomodoro-description" placeholder="New description">
+  <input type="text" id="new-pomodoro-title" placeholder="New title">
+  <input type="text" id="new-pomodoro-type"  placeholder="New type">
+  <button type="button" class="btn btn-success" id="new-pomodoro-add">Add</button>
+</template>

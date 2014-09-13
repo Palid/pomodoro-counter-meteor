@@ -1,0 +1,115 @@
+<template name="header">
+<nav class="navbar navbar-default" role="navigation">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Pomodoro-counter</a>
+    </div>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse pull-right" id="navbar-collapse-1">
+      {{#if currentUser}}
+        <span>{{ currentUser.username }}</span>
+        <!-- pomodoro -->
+        <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#modal-pomodoro">
+        Pomodoro
+        </button>
+        <div class="modal fade" id="modal-pomodoro" tabindex="-1" role="dialog" aria-labelledby="modal-pomodoro-label" aria-hidden="true">
+          <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="modal-pomodoro-label">Pomodoro</h4>
+              </div>
+              <div class="modal-body">
+                <div class="container-fluid">
+                  {{> pomodoroSettings}}
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Settings -->
+        <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#modal-settings">
+        Settings
+        </button>
+        <div class="modal fade" id="modal-settings" tabindex="-1" role="dialog" aria-labelledby="modal-settings-label" aria-hidden="true">
+          <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="modal-settings-label">Settings</h4>
+              </div>
+              <div class="modal-body">
+                <div class="container-fluid">
+                  {{> settings}}
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Logout -->
+        <button class="btn btn-default" id="logout-button">Logout</button>
+      {{ else }}
+      <!-- Register -->
+      <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#modal-register">
+      Register
+      </button>
+      <div class="modal fade" id="modal-register" tabindex="-1" role="dialog" aria-labelledby="modal-register-label" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+              <h4 class="modal-title" id="modal-register-label">Register</h4>
+            </div>
+            <div class="modal-body">
+              <div class="container-fluid">
+                {{> register}}
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Register</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Login -->
+      <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#modal-login">
+      Log in!
+      </button>
+      <div class="modal fade" id="modal-login" tabindex="-1" role="dialog" aria-labelledby="modal-login-label" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+              <h4 class="modal-title" id="modal-login-label">Log in!</h4>
+            </div>
+            <div class="modal-body">
+              <div class="container-fluid">
+                {{> login}}
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Log in!</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      {{ /if }}
+      </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+</template>

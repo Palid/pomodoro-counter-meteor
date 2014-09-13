@@ -1,0 +1,13 @@
+<template name="table">
+  <div class="input-group pull-left">
+    <span class="input-group-addon"><span class="glyphicon glyphicon-search" id="pomodoro-search"></span></span>
+    <input type="text" class="form-control" id="pomodoro-type-search" placeholder="Type">
+  </div>
+  <ul class="pomodoro-table">
+    {{#each pomodoro}}
+      <li class="pomodoro-cell" style="background-color:{{ color }}">
+      </li>
+    {{/each}}
+  </ul>
+
+</template>

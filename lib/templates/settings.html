@@ -1,0 +1,12 @@
+<template name="settings">
+  <div class="container-fluid">
+    <h4 class="text-center col-sm-3">type</h4>
+    <h4 class="text-center col-sm-3">color</h4>
+  </div>
+  {{#each types}}
+    {{> settingsItem}}
+  {{/each}}
+      <input type="text" id="new-settings-type" value="" placeholder="Add new type">
+      <input type="text" id="new-settings-color" value="" placeholder="Add new color">
+      <button type="button" class="btn btn-success" id="new-settings-add">Add</button>
+</template>
